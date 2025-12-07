@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karim Husseini | PhD Student</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a1a1a;
+            --secondary: #4a4a4a;
+            --accent: #d4654c;
+            --background: #fafaf8;
+            --border: #e0e0dc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Crimson Pro', serif;
+            background: var(--background);
+            color: var(--primary);
+            line-height: 1.7;
+            font-size: 18px;
+        }
+
+        .container {
+            max-width: 740px;
+            margin: 0 auto;
+            padding: 80px 24px;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        header {
+            margin-bottom: 80px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 40px;
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+        }
+
+        .header-content {
+            flex: 1;
+        }
+
+        .profile-pic {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--border);
+            flex-shrink: 0;
+            transition: border-color 0.3s ease;
+        }
+
+        .profile-pic:hover {
+            border-color: var(--accent);
+        }
+
+        nav {
+            margin-bottom: 60px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            gap: 32px;
+            flex-wrap: wrap;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 14px;
+        }
+
+        nav a {
+            color: var(--secondary);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding-bottom: 4px;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
+
+        nav a.active {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            font-size: 20px;
+            color: var(--secondary);
+            margin-bottom: 24px;
+        }
+
+        .contact {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 14px;
+        }
+
+        .contact a {
+            color: var(--primary);
+            text-decoration: none;
+            border-bottom: 1px solid var(--border);
+            transition: all 0.2s ease;
+        }
+
+        .contact a:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+        }
+
+        section {
+            margin-bottom: 64px;
+            animation: slideIn 0.6s ease-out backwards;
+        }
+
+        section:nth-child(2) { animation-delay: 0.1s; }
+        section:nth-child(3) { animation-delay: 0.2s; }
+        section:nth-child(4) { animation-delay: 0.3s; }
+        section:nth-child(5) { animation-delay: 0.4s; }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-10px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        h2 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 24px;
+            font-weight: 500;
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        p {
+            margin-bottom: 16px;
+            color: var(--secondary);
+        }
+
+        .publication {
+            margin-bottom: 24px;
+            padding-left: 24px;
+            border-left: 2px solid var(--border);
+            transition: border-color 0.3s ease;
+        }
+
+        .publication:hover {
+            border-color: var(--accent);
+        }
+
+        .pub-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .pub-venue {
+            font-style: italic;
+            color: var(--secondary);
+            font-size: 16px;
+        }
+
+        .pub-authors {
+            font-size: 16px;
+            color: var(--secondary);
+            margin-bottom: 4px;
+        }
+
+        .interests {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .tag {
+            padding: 6px 16px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            font-size: 14px;
+            font-family: 'IBM Plex Mono', monospace;
+            transition: all 0.2s ease;
+        }
+
+        .tag:hover {
+            border-color: var(--accent);
+            background: var(--accent);
+            color: white;
+        }
+
+        footer {
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            font-size: 14px;
+            color: var(--secondary);
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding: 40px 20px;
+            }
+            
+            h1 {
+                font-size: 36px;
+            }
+            
+            header {
+                flex-direction: column-reverse;
+                align-items: center;
+                text-align: center;
+            }
+
+            .profile-pic {
+                width: 140px;
+                height: 140px;
+                margin-bottom: 24px;
+            }
+            
+            .contact {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav {
+                gap: 20px;
+                justify-content: center;
+            }
+        }
+    </style>
+
+
+
+</head>
+<body>
+    <div class="container">
+        <!--
+       <nav>
+            <a href="index.html">Home</a>
+            <a href="research.html">Research</a>
+            <a href="publications.html">Publications</a>
+            <a href="cv.html">CV</a>
+        </nav>
+-->
+
+        <header>
+            <div class="header-content">
+                <h1>Karim Husseini</h1>
+                <div class="subtitle">PhD Student in Computer Science</div>
+                <div class="contact">
+                    <a href="mailto:kelhus2@uic.edu">email</a>
+                    <!-- <a href="https://scholar.google.com" target="_blank">scholar</a> -->
+                    <a href="https://github.com/CppKarim" target="_blank">github</a>
+                    <a href="https://www.linkedin.com/in/karim-el-husseini/" target="_blank">linkedin</a>
+                </div>
+            </div>
+            <img src="images/headshot.jpg" alt="Karim Husseini" class="profile-pic">
+        </header>
+
+        <section>
+            <h2>About</h2>
+            <p>
+                I am a PhD student at the University of Illinois Chicago, fortunate enough 
+                to be working with Professors Mesrob Ohannessian, Xinhua Zhang, and Ian Kash. 
+                My research focuses on RLxLLMs and intelligence research, with a particular interest
+                RLHF and reasoning. I am passionate about model alignment and enhancing model capabilities,
+                and work on developing RL training algorithms to achieve those goals.
+                I remain interested in and am inspired by the areas of information theory,
+                optimization, algorithm design, algorithmic complexity theory, and neuroscience.
+            </p>
+            <p>
+                Prior to my PhD, I obtained my bachelor's in Computer and Communications engineering at the American University of Beirut.
+                <!-- , where I worked 
+                on [previous work/project].--> 
+            </p>
+        </section>
+
+        <section>
+            <h2>Research Interests</h2>
+            <div class="interests">
+                <span class="tag">Reinforcement Learning in LLMs</span>
+                <span class="tag">LLM agents</span>  
+                <span class="tag">LLM reasoning</span>
+                <span class="tag">Artificial Intelligence</span>
+            </div>
+        </section>
+        <!--
+        <section>
+            <h2>Publications</h2>
+            
+            <div class="publication">
+                <div class="pub-title">Your Paper Title Here: A Novel Approach to Solving X</div>
+                <div class="pub-authors">K. Husseini, Co-Author Name, Another Author</div>
+                <div class="pub-venue">Conference/Journal Name 2024</div>
+            </div>
+
+            <div class="publication">
+                <div class="pub-title">Another Research Paper on Important Topic</div>
+                <div class="pub-authors">First Author, K. Husseini, Last Author</div>
+                <div class="pub-venue">Conference/Journal Name 2023</div>
+            </div>
+        </section>
+        -->
+        <section>
+            <h2>Teaching</h2>
+            <p><strong>Teaching Assistant</strong> — Software Design (Spring 2025 @ UIC)</p>
+            <p><strong>Teaching Assistant</strong> — Programming Languages (Spring 2024 @ AUB)</p>
+            <p><strong>Teaching Assistant</strong> — Signals and Systems (Fall 2024 @ AUB)</p>
+        </section>
+
+        <section>
+            <h2>News</h2>
+            <p><strong>May 2025</strong> — Started my internship at Argonne National Lab</p>
+            <p><strong>Sep 2024</strong> — Started my PhD at UIC</p>
+            <p><strong>Jun 2024</strong> — Graduated with a bachelor's from AUB</p>
+        </section>
+
+
+        <footer>
+            Last updated December 2025
+        </footer>
+    </div>
+</body>
+</html>
